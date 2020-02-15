@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>
+        Current rates
+    </title>
+{% endblock %}
+{% block content %}
+    <table class="table table-striped table-responsive">
+        <thead>
+            <tr>
+                <th scope="col">Валюта</th>
+                <th scope="col">Начало периода</th>
+                <th scope="col">Окончание периода</th>
+                <th scope="col">Цена покупки</th>
+                <th scope="col">Цена продажи</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% block tbody %}
+            {% for element in rates %}
+                <tr>
+                    <th>
+                        <a href="{% url 'currency_history' element.currency.name %}"> {{ element.currency.name }}</a>
+                    </th>
+                    <th>
+                        {{ element.date_start }}
+                    </th>
+                    <th>
+                        {{ element.date_end }}
+                    </th>
+                    <th>
+                        {{ element.rate_bid }}
+                    </th>
+                    <th>
+                        {{ element.rate_ask }}
+                    </th>
+                </tr>
+            {% endfor %}
+        {% endblock %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "current_rates.html" %}
+{% block title %}
+    <title>
+        History rates
+    </title>
+{% endblock %}
+{% block tbody %}
+    {% for element in history %}
+        <tr>
+            <th>
+                {{ element.currency.name }}
+            </th>
+            <th>
+                {{ element.date_start }}
+            </th>
+            <th>
+                {{ element.date_end }}
+            </th>
+            <th>
+                {{ element.rate_bid }}
+            </th>
+            <th>
+                {{ element.rate_ask }}
+            </th>
+        </tr>
+    {% endfor %}
+{% endblock %}
