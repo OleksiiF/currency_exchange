@@ -37,7 +37,7 @@ class OneCurrencyHistory(View):
     def get(self, request, *args, **kwargs):
         data = CurrencyHistory.objects.filter(
             currency__name=kwargs['code']
-        )
+        ).order_by('date')
         for index, value in enumerate(data):
             try:
                 value.set_date_end(

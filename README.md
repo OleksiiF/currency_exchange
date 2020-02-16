@@ -13,15 +13,19 @@ Install requirements to your virtual environment:
 ```
 pip install requirements.txt
 ```
-Make migrations for your project.
+Make migrations for your project:
 ```
 pytnon3 manage.py migrate
 ```
-Run command for initiate db with samples of data.
+Run tests:
+```
+python manage.py test
+```
+Run command for initiate db with samples of data:
 ```
 pytnon3 manage.py fill_db
 ```
-Running
+Running:
 ```
 pytnon3 manage.py runserver
 ```
