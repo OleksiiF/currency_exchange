@@ -11,16 +11,19 @@
                 {{ element.currency.name }}
             </th>
             <th>
-                {{ element.date_start }}
+                {{ element.date }}
             </th>
             <th>
-                {{ element.date_end }}
+                {{ element.get_date_end }}
             </th>
             <th>
                 {{ element.rate_bid }}
             </th>
             <th>
                 {{ element.rate_ask }}
+            </th>
+            <th>
+                <a href="{% url "delete_rate" element.id %}">Delete</a>
             </th>
         </tr>
     {% endfor %}

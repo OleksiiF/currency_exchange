@@ -13,6 +13,9 @@
                 <th scope="col">Окончание периода</th>
                 <th scope="col">Цена покупки</th>
                 <th scope="col">Цена продажи</th>
+                <th>
+                    <a href="{% url "add_new_rate" %}">+</a>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -23,16 +26,19 @@
                         <a href="{% url 'currency_history' element.currency.name %}"> {{ element.currency.name }}</a>
                     </th>
                     <th>
-                        {{ element.date_start }}
+                        {{ element.date }}
                     </th>
                     <th>
-                        {{ element.date_end }}
+                        {{ element.get_date_end }}
                     </th>
                     <th>
                         {{ element.rate_bid }}
                     </th>
                     <th>
                         {{ element.rate_ask }}
+                    </th>
+                    <th>
+                        <a href="{% url "delete_rate" element.id %}">Delete</a>
                     </th>
                 </tr>
             {% endfor %}

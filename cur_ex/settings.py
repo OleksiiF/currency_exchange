@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'cur_ex.currency',
-    'cur_ex.core'
+    'cur_ex.core',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [

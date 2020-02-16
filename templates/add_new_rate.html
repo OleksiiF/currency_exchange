@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% crispy form %}
+
+{% block title %}
+    <title>
+        Add new rate
+    </title>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<h4>Add new rate</h4>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-2">
+				<form action="" method="POST">
+					{{  form.error|crispy }}
+					{% csrf_token %}
+					{{  form|crispy }}
+					<input type="submit" value="Add new rate">
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}
