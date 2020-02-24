@@ -25,7 +25,7 @@ Run command for initiate db with samples of data:
 ```
 pytnon3 manage.py fill_db
 ```
-Running:
+## Running
 ```
 pytnon3 manage.py runserver
 ```
